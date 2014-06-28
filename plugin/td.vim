@@ -41,7 +41,7 @@ function! s:td_issue(args)
   endif
   return td#job#issue(database, td#util#current_buffer_str())
 endfunction
-command! -nargs=? TDIssue echo s:td_issue('<args>')
+command! -nargs=? TDIssueCurrentBuffer echo s:td_issue('<args>')
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
