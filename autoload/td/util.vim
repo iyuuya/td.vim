@@ -13,7 +13,6 @@ let Vital = vital#of('td')
 let s:HTTP = Vital.import('Web.HTTP')
 let s:JSON = Vital.import('Web.JSON')
 
-let authorization_prefix = 'AUTHORIZATION: TD1 '
 let s:host = 'api.treasuredata.com'
 
 function! td#util#http_get(path, params)
