@@ -17,10 +17,6 @@ let g:loaded_td = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! s:getbufall()
-  return join(getbufline('%', 0, '$'), "\n")
-endfunction
-
 command! TDDB
       \ echo td#database#list()
 command! -nargs=1 TDTable
@@ -32,7 +28,7 @@ function! s:td_issue(args)
   else
     let database = a:args
   endif
-  return td#job#issue(database, s:getbufall())
+  return td#job#issue(database, td#util#current_buffer_str())
 endfunction
 command! -nargs=? TDIssue echo s:td_issue('<args>')
 
