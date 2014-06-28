@@ -17,13 +17,13 @@ let g:loaded_td = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! TDDB
+command! TDDatabaseList
       \ echo td#database#list()
 
-command! -nargs=1 TDTable
+command! -nargs=1 TDTableList
       \ echo td#table#list('<args>')
 
-command! TDJob
+command! TDJobList
       \ echo td#job#list()
 command! -nargs=1 TDJobStatus
       \ echo td#job#status('<args>')

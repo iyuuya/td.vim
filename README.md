@@ -11,11 +11,11 @@ MEMO
 * database : g:td_default_database
 * job_id : s:lastest_job_id
 
-* TDDatabases
+* TDDatabaseList
 
-* TDTables [database]
+* TDTableList [database]
 
-* TDJobs
+* TDJobList
 * TDJobStatus [job_id]
 * TDJobShow [job_id]
 * TDJobResult [job_id]
