@@ -19,9 +19,20 @@ set cpo&vim
 
 command! TDDB
       \ echo td#database#list()
+
 command! -nargs=1 TDTable
       \ echo td#table#list('<args>')
 
+command! TDJob
+      \ echo td#job#list()
+command! -nargs=1 TDJobStatus
+      \ echo td#job#status('<args>')
+command! -nargs=1 TDJobShow
+      \ echo td#job#show('<args>')
+command! -nargs=1 TDJobKill
+      \ echo td#job#kill('<args>')
+command! -nargs=1 TDJobResult
+      \ echo td#job#result('<args>')
 function! s:td_issue(args)
   if a:args == ''
     let database = g:td_default_database
