@@ -11,7 +11,7 @@ MEMO
 * database : g:td_default_database
 * job_id : s:lastest_job_id
 
-* TDDatabaseList
+* Unite td/database
 
 * TDTableList [database]
 
