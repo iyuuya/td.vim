@@ -27,7 +27,7 @@ function! td#util#http_post(path, params)
   return s:JSON.decode(s:HTTP.post('http://' . s:host . a:path, a:params, s:request_header()).content)
 endfunction
 
-function! td#util:current_buffer_str()
+function! td#util#current_buffer_str()
   return join(getbufline('%', 0, '$'), "\n")
 endfunction
 

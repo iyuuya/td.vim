@@ -9,18 +9,17 @@ scriptencoding utf-8
 let s:save_cpo = &cpo
 set cpo&vim
 
+let g:td_default_database = ''
+
 function! td#database#list()
   return td#util#http_get('/v3/database/list', {}).databases
 endfunction
 
 function! td#database#name()
-  if s:latest_database != ''
-    return s:latest_database
-  elseif g:td_default_database != ''
+  if g:td_default_database != ''
     return g:td_default_database
   else
-    " メッセージ書く
-    throw
+    return ''
   end
 endfunction
 

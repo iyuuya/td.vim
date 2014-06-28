@@ -35,9 +35,12 @@ command! -nargs=1 TDJobResult
       \ echo td#job#result('<args>')
 function! s:td_issue(args)
   if a:args == ''
-    let database = g:td_default_database
+    let database = td#database#name()
   else
     let database = a:args
+  endif
+  if database == ''
+    throw "Argument Error"
   endif
   return td#job#issue(database, td#util#current_buffer_str())
 endfunction

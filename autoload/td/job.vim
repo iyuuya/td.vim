@@ -9,30 +9,39 @@ scriptencoding utf-8
 let s:save_cpo = &cpo
 set cpo&vim
 
+let s:latest_id = ''
+
 function! td#job#list()
-  return td#util#http_get('/v3/job#/list', {}).jobs
+  return td#util#http_get('/v3/job/list', {}).jobs
 endfunction
 
 function! td#job#issue(database, query, ...)
   " [todo] - priority
   " priority (optional): priority of the job#. -2 (VERY LOW) to 2 (VERY HIGH). The default is 0 (NORMAL).
-  return td#util#http_post('/v3/job#/issue/hive/' . a:database, { 'query' : a:query })
+  let result = td#util#http_post('/v3/job/issue/hive/' . a:database, { 'query' : a:query })
+  echo result
+  let s:latest_id = result.job_id
+  return result
 endfunction
 
 function! td#job#status(job_id)
-  return td#util#http_get('/v3/job#/status/' . a:job_id, {})
+  return td#util#http_get('/v3/job/status/' . a:job_id, {})
 endfunction
 
 function! td#job#show(job_id)
-  return td#util#http_get('/v3/job#/show/' . a:job_id, {})
+  return td#util#http_get('/v3/job/show/' . a:job_id, {})
 endfunction
 
 function! td#job#kill(job_id)
-  return td#util#http_post('/v3/job#/kill/'.a:job_id)
+  return td#util#http_post('/v3/job/kill/'.a:job_id)
 endfunction
 
 function! td#job#result(job_id)
-  return s:HTTP.get('http://api.treasuredata.com/v3/job#/result/' . a:job_id, { 'format' : 'csv' }, {'AUTHORIZATION' : 'TD1 '.g:td_api_key}).content
+  return s:HTTP.get('http://api.treasuredata.com/v3/job/result/' . a:job_id, { 'format' : 'csv' }, {'AUTHORIZATION' : 'TD1 '.g:td_api_key}).content
+endfunction
+
+function! td#job#latest_id()
+  return s:latest_id
 endfunction
 
 let &cpo = s:save_cpo
