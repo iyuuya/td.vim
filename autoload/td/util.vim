@@ -1,7 +1,7 @@
 "=============================================================================
 " FILE: autoload/td/util.vim
 " AUTHOR: iyuuya <i.yuuya@gmail.com>
-" Last Change: 29-Jun-2014.
+" Last Change: 30-Jun-2014.
 " License: MIT license
 "=============================================================================
 scriptencoding utf-8
@@ -9,9 +9,9 @@ scriptencoding utf-8
 let s:save_cpo = &cpo
 set cpo&vim
 
-let Vital = vital#of('td')
-let s:HTTP = Vital.import('Web.HTTP')
-let s:JSON = Vital.import('Web.JSON')
+let s:Vital = vital#of('td')
+let s:HTTP = s:Vital.import('Web.HTTP')
+let s:JSON = s:Vital.import('Web.JSON')
 
 let s:host = 'api.treasuredata.com'
 
