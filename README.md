@@ -12,15 +12,21 @@ MEMO
 * job_id : s:lastest_job_id
 
 * Unite td/database
+  + [todo] action: table list
 * Unite td/table:database_name
 
-* TDJobList
+* Unite td/job
+  + [todo] action: show
+  + [todo] action: status
+  + [todo] action: result
+  + [todo] action: kill
+
 * TDJobStatus [job_id]
 * TDJobShow [job_id]
 * TDJobResult [job_id]
 * TDJobKill [job_id]
 
-* TDIssue [database] query
+* [todo] TDIssue [database] query
 * TDIssueCurrentBuffer [databse]
 
-* TDNewQuery
+* [todo] TDNewQuery
