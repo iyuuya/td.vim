@@ -12,8 +12,7 @@ MEMO
 * job_id : s:lastest_job_id
 
 * Unite td/database
-
-* TDTableList [database]
+* Unite td/table:database_name
 
 * TDJobList
 * TDJobStatus [job_id]
