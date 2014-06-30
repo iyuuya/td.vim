@@ -1,7 +1,7 @@
 "=============================================================================
 " FILE: autoload/unite/sources/td_database.vim
 " AUTHOR: iyuuya <i.yuuya@gmail.com>
-" Last Change: 29-Jun-2014.
+" Last Change: 30-Jun-2014.
 " License: MIT license
 "=============================================================================
 scriptencoding utf-8
@@ -25,8 +25,6 @@ function! s:source.gather_candidates(args, context)
         \ "source" : "td/database",
         \ }')
 endfunction
-
-call unite#define_source(s:source)
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

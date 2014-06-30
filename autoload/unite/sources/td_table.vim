@@ -26,7 +26,5 @@ function! s:source.gather_candidates(args, context)
         \ }')
 endfunction
 
-call unite#define_source(s:source)
-
 let &cpo = s:save_cpo
 unlet s:save_cpo
