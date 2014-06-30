@@ -23,7 +23,7 @@ MEMO
 
 * TDJobStatus [job_id]
 * TDJobShow [job_id]
-* TDJobResult [job_id]
+* [todo] - TDJobResult [job_id]  (動かない)
 * TDJobKill [job_id]
 
 * [todo] TDIssue [database] query
